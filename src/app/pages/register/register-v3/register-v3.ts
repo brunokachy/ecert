@@ -21,7 +21,7 @@ export class RegisterV3Page implements OnDestroy {
     this.renderer.removeClass(document.body, 'bg-white');
   }
 
-  formSubmit(f: NgForm) {
-    this.router.navigate(['dashboard/v3']);
+  register() {
+    alert('Your application form was submitted successfully. It will be reviewed and an update sent to you shortly');
   }
 }

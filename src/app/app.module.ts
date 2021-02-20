@@ -143,6 +143,10 @@ import { PosCustomerOrderPage }     from './pages/pos/customer-order/customer-or
 import { PosMenuStockPage }         from './pages/pos/menu-stock/menu-stock';
 import { PosTableBookingPage }      from './pages/pos/table-booking/table-booking';
 
+import {BrokerManagementComponent} from './pages/broker-management/broker-management.component';
+import {AdminDashboardComponent} from './pages/dashboard/admin-dashboard/admin-dashboard.component';
+import {BrokerDashboardComponent} from './pages/dashboard/broker-dashboard/broker-dashboard.component';
+
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   timeGridPlugin,
@@ -225,7 +229,11 @@ FullCalendarModule.registerPlugins([
     PosKitchenOrderPage,
     PosCustomerOrderPage,
     PosTableBookingPage,
-    PosMenuStockPage
+    PosMenuStockPage,
+
+    BrokerManagementComponent,
+    AdminDashboardComponent,
+    BrokerDashboardComponent
   ],
   imports: [
     AppRoutingModule,
