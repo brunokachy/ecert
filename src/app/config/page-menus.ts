@@ -18,7 +18,7 @@ var pageMenus = [{
   'title': 'Reports',
   'url': 'reports'
 },{
-  'icon': 'fas fa-envelope',
+  'icon': 'fa fa-envelope',
   'title': 'Claims',
   'url': 'claims'
 },{
