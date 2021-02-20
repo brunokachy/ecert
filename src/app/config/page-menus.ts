@@ -26,6 +26,10 @@ var pageMenus = [{
   'title': 'Underwritings',
   'url': 'underwritings'
 },{
+  'icon': 'fas fa-phone',
+  'title': 'Support',
+  'url': 'support'
+},{
   'icon': 'fa fa-cogs',
   'title': 'Settngs',
   'url': 'settings'
