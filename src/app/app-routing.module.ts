@@ -99,7 +99,7 @@ import { PosMenuStockPage }         from './pages/pos/menu-stock/menu-stock';
 import { PosTableBookingPage }      from './pages/pos/table-booking/table-booking';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard/v2', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 
   { path: 'dashboard/v1', component: DashboardV1Page, data: { title: 'Dashboard V1'} },
   { path: 'dashboard/v2', component: DashboardV2Page, data: { title: 'Dashboard V2'} },
@@ -164,8 +164,8 @@ const routes: Routes = [
 
   { path: 'login/v1', component: LoginV1Page, data: { title: 'Login V1 Page'} },
   { path: 'login/v2', component: LoginV2Page, data: { title: 'Login V2 Page'} },
-  { path: 'login/v3', component: LoginV3Page, data: { title: 'Login V3 Page'} },
-  { path: 'register/v3', component: RegisterV3Page, data: { title: 'Register V3 Page'} },
+  { path: 'login', component: LoginV3Page, data: { title: 'Login V3 Page'} },
+  { path: 'register', component: RegisterV3Page, data: { title: 'Register V3 Page'} },
 
   { path: 'helper/css', component: HelperCssPage, data: { title: 'Helper CSS'} },
 
