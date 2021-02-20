@@ -14,6 +14,22 @@ var pageMenus = [{
     'title': 'Dashboard v3'
   }]
 },{
+  'icon': 'fas fa-chart-bar',
+  'title': 'Reports',
+  'url': 'reports'
+},{
+  'icon': 'fas fa-envelope',
+  'title': 'Claims',
+  'url': 'claims'
+},{
+  'icon': 'fas fa-edit',
+  'title': 'Underwritings',
+  'url': 'underwritings'
+},{
+  'icon': 'fa fa-cogs',
+  'title': 'Settngs',
+  'url': 'settings'
+},{
   'icon': 'fa fa-hdd',
   'title': 'Email',
   'url': '',
