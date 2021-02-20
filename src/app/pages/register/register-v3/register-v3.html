@@ -21,32 +21,41 @@
     <!-- end register-header -->
     <!-- begin register-content -->
     <div class="register-content">
-      <form #f="ngForm" (ngSubmit)="formSubmit(f)" class="margin-bottom-0">
+      <form (ngSubmit)="register()" class="margin-bottom-0" ngNativeValidate>
         <label class="control-label">Company Name <span class="text-danger">*</span></label>
-        <div class="row row-space-10">
-          <div class="col-md-6 m-b-15">
-            <input type="text" class="form-control" placeholder="First name" required />
-          </div>
-          <div class="col-md-6 m-b-15">
-            <input type="text" class="form-control" placeholder="Last name" required />
+        <div class="row m-b-15">
+          <div class="col-md-12">
+            <input [(ngModel)]="brokerRequest.companyName" name="companyName" type="text" class="form-control" placeholder="Company Name" required />
           </div>
         </div>
         <label class="control-label">Company Email <span class="text-danger">*</span></label>
         <div class="row m-b-15">
           <div class="col-md-12">
-            <input type="text" class="form-control" placeholder="Email address" required />
+            <input [(ngModel)]="brokerRequest.companyEmail" name="email" type="email" class="form-control" placeholder="Email Address" required />
           </div>
         </div>
         <label class="control-label">Password <span class="text-danger">*</span></label>
         <div class="row m-b-15">
           <div class="col-md-12">
-            <input type="password" class="form-control" placeholder="Password" required />
+            <input [(ngModel)]="brokerRequest.password" name="password" type="password" class="form-control" placeholder="Password" required />
+          </div>
+        </div>
+        <label class="control-label">Form C02 (Share Allotment) <span class="text-danger">*</span></label>
+        <div class="row m-b-15">
+          <div class="col-md-12">
+            <input [(ngModel)]="brokerRequest.cotwo" name="cotwo" type="file" class="form-control" required />
+         </div>
+        </div>
+        <label class="control-label">Form C07(Particulars of Directors) <span class="text-danger">*</span></label>
+        <div class="row m-b-15">
+          <div class="col-md-12">
+            <input [(ngModel)]="brokerRequest.coseven" type="file" class="form-control" name="coseven" required />
           </div>
         </div>
         <label class="control-label">RC Number <span class="text-danger">*</span></label>
         <div class="row m-b-15">
           <div class="col-md-12">
-            <input type="text" class="form-control" placeholder="Re-enter email address" required />
+            <input [(ngModel)]="brokerRequest.rcNumber" type="text" name="rcNumber" class="form-control" placeholder="Company RC Number" required />
           </div>
         </div>
         <div class="checkbox checkbox-css m-b-30">

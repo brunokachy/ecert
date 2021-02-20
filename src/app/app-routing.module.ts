@@ -98,6 +98,10 @@ import { PosCustomerOrderPage }     from './pages/pos/customer-order/customer-or
 import { PosMenuStockPage }         from './pages/pos/menu-stock/menu-stock';
 import { PosTableBookingPage }      from './pages/pos/table-booking/table-booking';
 
+import {BrokerManagementComponent} from './pages/broker-management/broker-management.component'
+import { AdminDashboardComponent } from './pages/dashboard/admin-dashboard/admin-dashboard.component';
+import { BrokerDashboardComponent } from './pages/dashboard/broker-dashboard/broker-dashboard.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
@@ -179,7 +183,11 @@ const routes: Routes = [
   { path: 'pos/kitchen-order', component: PosKitchenOrderPage, data: { title: 'POS - Kitchen Order'} },
   { path: 'pos/customer-order', component: PosCustomerOrderPage, data: { title: 'POS - Customer Order'} },
   { path: 'pos/menu-stock', component: PosMenuStockPage, data: { title: 'POS - Menu Stock'} },
-  { path: 'pos/table-booking', component: PosTableBookingPage, data: { title: 'POS - Table Booking'} }
+  { path: 'pos/table-booking', component: PosTableBookingPage, data: { title: 'POS - Table Booking'} },
+
+  { path: 'broker-management', component: BrokerManagementComponent, data: { title: 'Broker Management'} },
+  { path: 'admin-dashboard', component: AdminDashboardComponent, data: { title: 'Admin Dashboard'} },
+  { path: 'broker-dashboard', component: BrokerDashboardComponent, data: { title: 'Broker Dashboard'} }
 ];
 
 @NgModule({

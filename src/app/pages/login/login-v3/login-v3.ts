@@ -27,28 +27,56 @@ export class LoginV3Page implements OnDestroy {
   }
 
   login() {
-    
+
+    this.users = JSON.parse(localStorage.getItem('users'));
+
+    let isValid: boolean = false;
+
+    this.users.forEach(element => {
+      if (element.email == this.email && element.password == this.password) {
+        isValid = true;
+        this.user = element;
+        localStorage.setItem('user', JSON.stringify(this.user));
+      }
+    });
+
+    if (isValid) {
+
+      if (this.user.role == 'Admin') {
+        this.router.navigate(['admin-dashboard']);
+
+      }
+
+      if (this.user.role == 'Broker') {
+        this.router.navigate(['broker-dashboard']);
+
+      }
+
+
+    } else {
+      alert("Invalid Email and Password! Please try again.")
+    }
+
     // this.router.navigate(['dashboard/v3']);
   }
 
   createUsers() {
-    if (localStorage.getItem('users') == null) {
-      this.user = new User();
-      this.user.company = 'First Brokers Limited';
-      this.user.email = 'firstbrokers@gmail.com';
-      this.user.password = 'password';
-      this.user.role = 'Broker';
-      this.users.push(this.user);
+    localStorage.removeItem('users');
+    let broker = new User();
+    broker.company = 'First Brokers Limited';
+    broker.email = 'firstbrokers@gmail.com';
+    broker.password = 'password';
+    broker.role = 'Broker';
+    this.users.push(broker);
 
-      this.user = new User();
-      this.user.company = 'Old Mutual Limited';
-      this.user.email = 'oldmutual@gmail.com';
-      this.user.password = 'password';
-      this.user.role = 'Admin';
-      this.users.push(this.user);
+    let admin = new User();
+    admin.company = 'Old Mutual Limited';
+    admin.email = 'admin@oldmutual.com';
+    admin.password = 'password';
+    admin.role = 'Admin';
+    this.users.push(admin);
 
-      localStorage.setItem('users', JSON.stringify(this.users));
-      
-    }
+    localStorage.setItem('users', JSON.stringify(this.users));
+
   }
 }
