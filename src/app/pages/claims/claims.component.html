@@ -1,0 +1,69 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+  <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+  <li class="breadcrumb-item"><a href="javascript:;">Claims</a></li>
+  <li class="breadcrumb-item active">Ngx DataTable</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">
+  Claims <small>you can search existing claims here...</small>
+</h1>
+<!-- end page-header -->
+
+<div class="row">
+  <!-- begin col-2 -->
+  <div class="col-xl-2">
+    <h5>Combination Include:</h5>
+    <ul class="p-l-25 m-b-15">
+      <li>Autofill</li>
+      <li>ColReorder</li>
+      <li>Buttons</li>
+      <li>KeyTable</li>
+      <li>Responsive</li>
+      <li>RowReorder</li>
+      <li>Select</li>
+    </ul>
+    <p class="m-b-20">
+      <a
+        href="http://www.datatables.net/"
+        target="_blank"
+        class="btn btn-inverse btn-sm"
+        >View Official Website</a
+      >
+    </p>
+  </div>
+  <!-- end col-2 -->
+  <!-- begin col-10 -->
+  <div class="col-xl-10">
+    <panel title="Ngx DataTable" footerClass="p-b-0 p-t-20 b-t-0">
+      <div class="row">
+        <div class="col-lg-4">
+          <input
+            class="form-control"
+            placeholder="Type to filter the name column..."
+            (keyup)="updateFilter($event)"
+          />
+        </div>
+        <div class="col-lg-8 text-center"></div>
+      </div>
+      <ng-container outsideBody>
+        <hr class="m-0" />
+        <div class="table-responsive text-nowrap">
+          <ngx-datatable
+            #table
+            class="bootstrap"
+            [columns]="columns"
+            [columnMode]="ColumnMode.force"
+            [headerHeight]="50"
+            [footerHeight]="50"
+            rowHeight="auto"
+            [limit]="10"
+            [rows]="rows"
+          ></ngx-datatable>
+        </div>
+      </ng-container>
+    </panel>
+  </div>
+  <!-- end col-10 -->
+</div>
