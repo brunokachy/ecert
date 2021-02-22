@@ -12,7 +12,17 @@ var pageMenus = [{
   },{
     'url': 'dashboard/v3',
     'title': 'Dashboard v3'
+  },{
+    'url': 'admin-dashboard',
+    'title': 'Admin Dashboard'
+  },{
+    'url': 'broker-dashboard',
+    'title': 'Broker Dashboard'
   }]
+},{
+  'icon': 'fas fa-chart-bar',
+  'title': 'Broker Management',
+  'url': 'broker-management'
 },{
   'icon': 'fas fa-chart-bar',
   'title': 'Reports',
