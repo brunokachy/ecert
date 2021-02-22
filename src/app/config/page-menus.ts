@@ -4,15 +4,6 @@ var pageMenus = [{
   'url': '',
   'caret': 'true',
   'submenu': [{
-    'url': 'dashboard/v1',
-    'title': 'Dashboard v1'
-  },{
-    'url': 'dashboard/v2',
-    'title': 'Dashboard v2'
-  },{
-    'url': 'dashboard/v3',
-    'title': 'Dashboard v3'
-  },{
     'url': 'admin-dashboard',
     'title': 'Admin Dashboard'
   },{
@@ -20,7 +11,7 @@ var pageMenus = [{
     'title': 'Broker Dashboard'
   }]
 },{
-  'icon': 'fas fa-chart-bar',
+  'icon': 'fas fa-clipboard',
   'title': 'Broker Management',
   'url': 'broker-management'
 },{

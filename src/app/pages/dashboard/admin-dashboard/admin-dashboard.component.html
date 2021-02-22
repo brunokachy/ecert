@@ -1,296 +1,601 @@
 <!-- begin breadcrumb -->
 <ol class="breadcrumb float-xl-right">
-    <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-    <li class="breadcrumb-item active"><a href="javascript:;">Dashboard</a></li>
+  <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+  <li class="breadcrumb-item active">Dashboard</li>
 </ol>
 <!-- end breadcrumb -->
+
 <!-- begin page-header -->
-<h1 class="page-header">Admin <small>Dashboard</small></h1>
+<h1 class="page-header mb-3">Admin Dashboard</h1>
 <!-- end page-header -->
+<!-- begin daterange-filter -->
+<div class="d-sm-flex align-items-center mb-3">
+  <div href="#" (click)="open($event)" class="ngx-daterangepicker-action btn btn-inverse mr-2 d-inline-flex align-items-center">
+    <i class="fa fa-calendar fa-fw text-white-transparent-5 ml-n1 mr-1"></i>
+    <input type="text" class="form-control width-200" readonly placeholder="Choose date"
+        ngxDaterangepickerMd
+        [locale]="locale"
+        [opens]="'right'"
+        [alwaysShowCalendars]="alwaysShowCalendars"
+        [ranges]="ranges"
+        [showDropdowns]="true"
+        [showCustomRangeLabel]="true"
+        [showClearButton]="true"
+        [showCancel]="true"
+        [(ngModel)]="selected"
+        (ngModelChange)="ngModelChange($event)"
+        />
+    <b class="caret ml-2"></b>
+  </div>
+  <div class="text-muted f-w-600 mt-2 mt-sm-0">compared to <span>{{ prevDate }}</span></div>
+</div>
+<!-- end daterange-filter -->
 <!-- begin row -->
 <div class="row">
-  <!-- begin col-3 -->
-  <div class="col-xl-3 col-md-6">
-    <div class="widget widget-stats bg-teal">
-      <div class="stats-icon stats-icon-lg"><i class="fa fa-globe fa-fw"></i></div>
-      <div class="stats-content">
-        <div class="stats-title">TODAY'S VISITS</div>
-        <div class="stats-number">7,842,900</div>
-        <div class="stats-progress progress">
-          <div class="progress-bar" style="width: 70.1%;"></div>
+  <!-- begin col-6 -->
+  <div class="col-xl-6">
+    <!-- begin card -->
+    <div class="card border-0 bg-dark text-white mb-3">
+      <!-- begin card-body -->
+      <div class="card-body">
+        <!-- begin row -->
+        <div class="row">
+          <!-- begin col-7 -->
+          <div class="col-xl-7 col-lg-8">
+            <!-- begin title -->
+            <div class="mb-3 text-grey">
+              <b>TOTAL REVENUE</b>
+              <span class="ml-2">
+                <i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Total sales" placement="top" ngbPopover="Net sales (gross sales minus discounts and returns) plus taxes and shipping. Includes orders from all sales channels."></i>
+              </span>
+            </div>
+            <!-- end title -->
+            <!-- begin total-sales -->
+            <div class="d-flex mb-1">
+              <h2 class="mb-0">&#8358;146,984,559.25</h2>
+            </div>
+            <!-- end total-sales -->
+            <!-- begin percentage -->
+            <div class="mb-3 text-grey">
+              <i class="fa fa-caret-up"></i> 33.21% compare to last week
+            </div>
+            <!-- end percentage -->
+            <hr class="bg-white-transparent-2" />
+            <!-- begin row -->
+            <div class="row text-truncate">
+              <!-- begin col-6 -->
+              <div class="col-6">
+                <div class="f-s-12 text-grey">Total insurance order</div>
+                <div class="f-s-18 m-b-5 f-w-600 p-b-1">1,568</div>
+                <div class="progress progress-xs rounded-lg bg-dark-darker m-b-5">
+                  <div class="progress-bar progress-bar-striped rounded-right bg-teal" style="width: 55%"></div>
+                </div>
+              </div>
+              <!-- end col-6 -->
+              <!-- begin col-6 -->
+              <div class="col-6">
+                <div class="f-s-12 text-grey">Net income after claims</div>
+                <div class="f-s-18 m-b-5 f-w-600 p-b-1">&#8358;53,100,398.20</div>
+                <div class="progress progress-xs rounded-lg bg-dark-darker m-b-5">
+                  <div class="progress-bar progress-bar-striped rounded-right" style="width: 55%"></div>
+                </div>
+              </div>
+              <!-- end col-6 -->
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- end col-7 -->
+          <!-- begin col-5 -->
+          <div class="col-xl-5 col-lg-4 align-items-center d-flex justify-content-center">
+            <img src="../assets/img/svg/img-1.svg" height="150px" class="d-none d-lg-block" />
+          </div>
+          <!-- end col-5 -->
         </div>
-        <div class="stats-desc">Better than last week (70.1%)</div>
+        <!-- end row -->
       </div>
+      <!-- end card-body -->
     </div>
+    <!-- end card -->
   </div>
-  <!-- end col-3 -->
-  <!-- begin col-3 -->
-  <div class="col-xl-3 col-md-6">
-    <div class="widget widget-stats bg-blue">
-      <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
-      <div class="stats-content">
-        <div class="stats-title">TODAY'S PROFIT</div>
-        <div class="stats-number">180,200</div>
-        <div class="stats-progress progress">
-          <div class="progress-bar" style="width: 40.5%;"></div>
+  <!-- end col-6 -->
+  <!-- begin col-6 -->
+  <div class="col-xl-6">
+    <!-- begin row -->
+    <div class="row">
+      <!-- begin col-6 -->
+      <div class="col-sm-6">
+        <!-- begin card -->
+        <div class="card border-0 bg-dark text-white mb-3">
+          <!-- begin card-body -->
+          <div class="card-body">
+            <!-- begin title -->
+            <div class="mb-3 text-grey">
+              <b class="mb-3">CONVERSION RATE</b>
+              <span class="ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Conversion Rate" placement="top" ngbPopover="Percentage of sessions that resulted in orders from total number of sessions." data-original-title="" title=""></i></span>
+            </div>
+            <!-- end title -->
+            <!-- begin conversion-rate -->
+            <div class="d-flex align-items-center mb-1">
+              <h2 class="text-white mb-0">2.19%</h2>
+            </div>
+            <!-- end conversion-rate -->
+            <!-- begin percentage -->
+            <div class="mb-4 text-grey">
+              <i class="fa fa-caret-down"></i> 0.50% compare to last week
+            </div>
+            <!-- end percentage -->
+            <!-- begin info-row -->
+            <div class="d-flex mb-2">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-circle text-red f-s-8 mr-2"></i>
+                Initiated Requests
+              </div>
+              <div class="d-flex align-items-center ml-auto">
+                <div class="text-grey f-s-11"><i class="fa fa-caret-up"></i> 262%</div>
+                <div class="width-50 text-right pl-2 f-w-600">3.79%</div>
+              </div>
+            </div>
+            <!-- end info-row -->
+            <!-- begin info-row -->
+            <div class="d-flex mb-2">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-circle text-warning f-s-8 mr-2"></i>
+                Pending Requests
+              </div>
+              <div class="d-flex align-items-center ml-auto">
+                <div class="text-grey f-s-11"><i class="fa fa-caret-up"></i> 11%</div>
+                <div class="width-50 text-right pl-2 f-w-600">3.85%</div>
+              </div>
+            </div>
+            <!-- end info-row -->
+            <!-- begin info-row -->
+            <div class="d-flex">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-circle text-lime f-s-8 mr-2"></i>
+                Insurance Issued
+              </div>
+              <div class="d-flex align-items-center ml-auto">
+                <div class="text-grey f-s-11"><i class="fa fa-caret-up"></i> 57%</div>
+                <div class="width-50 text-right pl-2 f-w-600">2.19%</div>
+              </div>
+            </div>
+            <!-- end info-row -->
+          </div>
+          <!-- end card-body -->
         </div>
-        <div class="stats-desc">Better than last week (40.5%)</div>
+        <!-- end card -->
       </div>
-    </div>
-  </div>
-  <!-- end col-3 -->
-  <!-- begin col-3 -->
-  <div class="col-xl-3 col-md-6">
-    <div class="widget widget-stats bg-indigo">
-      <div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
-      <div class="stats-content">
-        <div class="stats-title">NEW ORDERS</div>
-        <div class="stats-number">38,900</div>
-        <div class="stats-progress progress">
-          <div class="progress-bar" style="width: 76.3%;"></div>
+      <!-- end col-6 -->
+      <!-- begin col-6 -->
+      <div class="col-sm-6">
+        <!-- begin card -->
+        <div class="card border-0 bg-dark text-white mb-3">
+          <!-- begin card-body -->
+          <div class="card-body">
+            <!-- begin title -->
+            <div class="mb-3 text-grey">
+              <b class="mb-3">DUMMY</b>
+              <span class="ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Store Sessions" placement="top" ngbPopover="Number of sessions on your online store. A session is a period of continuous activity from a visitor." data-original-title="" title=""></i></span>
+            </div>
+            <!-- end title -->
+            <!-- begin store-session -->
+            <div class="d-flex align-items-center mb-1">
+              <h2 class="text-white mb-0">70,719</h2>
+            </div>
+            <!-- end store-session -->
+            <!-- begin percentage -->
+            <div class="mb-4 text-grey">
+              <i class="fa fa-caret-up"></i> 9.5% compare to last week
+            </div>
+            <!-- end percentage -->
+            <!-- begin info-row -->
+            <div class="d-flex mb-2">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-circle text-teal f-s-8 mr-2"></i>
+                First
+              </div>
+              <div class="d-flex align-items-center ml-auto">
+                <div class="text-grey f-s-11"><i class="fa fa-caret-up"></i> 25.7%</div>
+                <div class="width-50 text-right pl-2 f-w-600">53,210</div>
+              </div>
+            </div>
+            <!-- end info-row -->
+            <!-- begin info-row -->
+            <div class="d-flex mb-2">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-circle text-blue f-s-8 mr-2"></i>
+                Second
+              </div>
+              <div class="d-flex align-items-center ml-auto">
+                <div class="text-grey f-s-11"><i class="fa fa-caret-up"></i> 16.0%</div>
+                <div class="width-50 text-right pl-2 f-w-600">11,959</div>
+              </div>
+            </div>
+            <!-- end info-row -->
+            <!-- begin info-row -->
+            <div class="d-flex">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-circle text-aqua f-s-8 mr-2"></i>
+                Third
+              </div>
+              <div class="d-flex align-items-center ml-auto">
+                <div class="text-grey f-s-11"><i class="fa fa-caret-up"></i> 7.9%</div>
+                <div class="width-50 text-right pl-2 f-w-600">5,545</div>
+              </div>
+            </div>
+            <!-- end info-row -->
+          </div>
+          <!-- end card-body -->
         </div>
-        <div class="stats-desc">Better than last week (76.3%)</div>
+        <!-- end card -->
       </div>
+      <!-- end col-6 -->
     </div>
+    <!-- end row -->
   </div>
-  <!-- end col-3 -->
-  <!-- begin col-3 -->
-  <div class="col-xl-3 col-md-6">
-    <div class="widget widget-stats bg-dark">
-      <div class="stats-icon stats-icon-lg"><i class="fa fa-comment-alt fa-fw"></i></div>
-      <div class="stats-content">
-        <div class="stats-title">NEW COMMENTS</div>
-        <div class="stats-number">3,988</div>
-        <div class="stats-progress progress">
-          <div class="progress-bar" style="width: 54.9%;"></div>
-        </div>
-        <div class="stats-desc">Better than last week (54.9%)</div>
-      </div>
-    </div>
-  </div>
-  <!-- end col-3 -->
+  <!-- end col-6 -->
 </div>
 <!-- end row -->
 <!-- begin row -->
 <div class="row">
-	<!-- begin col-8 -->
-	<div class="col-lg-8">
-		<div class="widget-chart with-sidebar inverse-mode">
-      <div class="widget-chart-content bg-dark">
-        <h4 class="chart-title">
-          Visitors Analytics
-          <small>Where do our visitors come from</small>
-        </h4>
-        <div class="widget-chart-full-width nvd3-inverse-mode">
-          <nvd3 [options]="stackedChartOptions" [data]="stackedChartData"></nvd3>
+  <!-- begin col-8 -->
+  <div class="col-xl-8 col-lg-6">
+    <!-- begin card -->
+    <div class="card bg-dark border-0 text-white mb-3">
+      <div class="card-body">
+        <div class="mb-3 text-grey"><b>USER ANALYTICS</b> <span class="ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Top products with units sold" placement="top" ngbPopover="Products with the most individual units sold. Includes orders from all sales channels." data-original-title="" title=""></i></span></div>
+        <div class="row">
+          <div class="col-xl-3 col-4">
+            <h3 class="mb-1">127.1K</h3>
+            <div>New Users</div>
+            <div class="text-grey f-s-11 text-truncate"><i class="fa fa-caret-up"></i> 25.5% from previous 7 days</div>
+          </div>
+          <div class="col-xl-3 col-4">
+            <h3 class="mb-1">179.9K</h3>
+            <div>Returning Users</div>
+            <div class="text-grey f-s-11 text-truncate"><i class="fa fa-caret-up"></i> 5.33% from previous 7 days</div>
+          </div>
+          <div class="col-xl-3 col-4">
+            <h3 class="mb-1">766.8K</h3>
+            <div>Total Page Views</div>
+            <div class="text-grey f-s-11 text-truncate"><i class="fa fa-caret-up"></i> 0.323% from previous 7 days</div>
+          </div>
         </div>
       </div>
-      <div class="widget-chart-sidebar bg-dark-darker">
-        <div class="chart-number">
-          1,225,729
-          <small>Total visitors</small>
+      <div class="card-body p-0">
+        <div style="height: 269px">
+          <div class="widget-chart-full-width nvd3-inverse-mode" style="height: 254px">
+            <nvd3 [options]="stackedChartOptions" [data]="stackedChartData"></nvd3>
+          </div>
         </div>
-        <div class="flex-grow-1 d-flex align-items-center nvd3-inverse-mode">
-          <nvd3 [options]="donutChartOptions" [data]="donutChartData"></nvd3>
-        </div>
-        <ul class="chart-legend f-s-11">
-          <li><i class="fa fa-circle fa-fw text-blue f-s-9 m-r-5 t-minus-1"></i> 34.0% <span>New Visitors</span></li>
-          <li><i class="fa fa-circle fa-fw text-teal f-s-9 m-r-5 t-minus-1"></i> 56.0% <span>Return Visitors</span></li>
-        </ul>
       </div>
     </div>
-	</div>
-	<!-- end col-8 -->
-	<!-- begin col-4 -->
-	<div class="col-lg-4">
-		<panel title="Visitors Origin" noButton="true" noBody="true">
-		  <ng-container noBody>
-        <div class="bg-black">
-          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="mapStyles" style="height: 179px;">
+    <!-- end card -->
+  </div>
+  <!-- end col-8 -->
+  <!-- begin col-4 -->
+  <div class="col-xl-4 col-lg-6">
+    <!-- begin card -->
+    <div class="card bg-dark border-0 text-white mb-3">
+      <div class="card-body">
+        <div class="mb-2 text-grey">
+          <b>BROKERS BY LOCATION</b>
+          <span class="ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Total sales" placement="top" ngbPopover="Net sales (gross sales minus discounts and returns) plus taxes and shipping. Includes orders from all sales channels."></i></span>
+        </div>
+        <div class="mb-2">
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="mapStyles" style="height: 200px;">
             <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
           </agm-map>
         </div>
-        <div class="list-group">
-          <a href="javascript:;" class="list-group-item list-group-item-inverse d-flex justify-content-between align-items-center text-ellipsis">
-            1. United State
-            <span class="badge f-w-500 bg-gradient-teal f-s-10">20.95%</span>
-          </a>
-          <a href="javascript:;" class="list-group-item list-group-item-inverse d-flex justify-content-between align-items-center text-ellipsis">
-            2. India
-            <span class="badge f-w-500 bg-gradient-blue f-s-10">16.12%</span>
-          </a>
-          <a href="javascript:;" class="list-group-item list-group-item-inverse d-flex justify-content-between align-items-center text-ellipsis">
-            3. Mongolia
-            <span class="badge f-w-500 bg-gradient-grey f-s-10">14.99%</span>
-          </a>
+        <div>
+          <div class="d-flex align-items-center text-white mb-2">
+            <div class="widget-img widget-img-xs rounded bg-inverse mr-2 width-40"></div>
+            <div class="d-flex w-100">
+              <div>Lagos, Nigeria</div>
+              <div class="ml-auto text-grey">39.85%</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center text-white mb-2">
+            <div class="widget-img widget-img-xs rounded bg-inverse mr-2 width-40"></div>
+            <div class="d-flex w-100">
+              <div>Abuja, Nigeria</div>
+              <div class="ml-auto text-grey">14.23%</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center text-white mb-2">
+            <div class="widget-img widget-img-xs rounded bg-inverse mr-2 width-40"></div>
+            <div class="d-flex w-100">
+              <div>Port Harcourt, Nigeria</div>
+              <div class="ml-auto text-grey">12.83%</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center text-white mb-2">
+            <div class="widget-img widget-img-xs rounded bg-inverse mr-2 width-40"></div>
+            <div class="d-flex w-100">
+              <div>Accra, Ghana</div>
+              <div class="ml-auto text-grey">11.14%</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center text-white mb-0">
+            <div class="widget-img widget-img-xs rounded bg-inverse mr-2 width-40"></div>
+            <div class="d-flex w-100">
+              <div>Ogun, Nigeria</div>
+              <div class="ml-auto text-grey">10.75%</div>
+            </div>
+          </div>
         </div>
-      </ng-container>
-		</panel>
-	</div>
-	<!-- end col-4 -->
+      </div>
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-4 -->
 </div>
 <!-- end row -->
 <!-- begin row -->
 <div class="row">
-	<!-- begin col-4 -->
-	<div class="col-lg-4">
-		<!-- begin panel -->
-		<panel bodyClass="bg-light" noButton="true">
-			<ng-container header>
-				<h4 class="panel-title">Chat History</h4>
-				<span class="label bg-teal">4 message</span>
-			</ng-container>
-
-      <perfect-scrollbar style="height: 225px">
-        <div class="chats">
-          <div class="left">
-            <span class="date-time">yesterday 11:23pm</span>
-            <a href="javascript:;" class="name">Sowse Bawdy</a>
-            <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-12.jpg" /></a>
-            <div class="message">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit volutpat. Praesent mattis interdum arcu eu feugiat.
-            </div>
+  <!-- begin col-4 -->
+  <div class="col-xl-4 col-lg-6">
+    <!-- begin card -->
+    <div class="card border-0 bg-dark-darker text-white mb-3">
+      <!-- begin card-body -->
+      <div class="card-body" style="background: no-repeat bottom right; background-image: url(../assets/img/svg/img-4.svg); background-size: auto 60%;">
+        <!-- begin title -->
+        <div class="mb-3 text-grey">
+          <b>TOP BROKERS BY REVENUE</b>
+          <span class="text-grey ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Sales by social source" placement="top" ngbPopover="Total online store sales that came from a social referrer source."></i></span>
+        </div>
+        <!-- end title -->
+        <!-- begin sales -->
+        <h3 class="m-b-10">&#8358;146,984,559.25</h3>
+        <!-- end sales -->
+        <!-- begin percentage -->
+        <div class="text-grey m-b-1"><i class="fa fa-caret-up"></i> 45.76% increased</div>
+        <!-- end percentage -->
+      </div>
+      <!-- end card-body -->
+      <!-- begin widget-list -->
+      <div class="widget-list widget-list-rounded inverse-mode">
+        <!-- begin widget-list-item -->
+        <a href="#" class="widget-list-item rounded-0 p-t-3">
+          <div class="widget-list-media icon">
+            <i class="fab fa-instagram bg-indigo text-white"></i>
           </div>
-          <div class="right">
-            <span class="date-time">08:12am</span>
-            <a href="javascript:;" class="name"><span class="label label-primary">ADMIN</span> Me</a>
-            <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-13.jpg" /></a>
-            <div class="message">
-              Nullam posuere, nisl a varius rhoncus, risus tellus hendrerit neque.
-            </div>
+          <div class="widget-list-content">
+            <div class="widget-list-title">Sealoud</div>
           </div>
-          <div class="left">
-            <span class="date-time">09:20am</span>
-            <a href="javascript:;" class="name">Neck Jolly</a>
-            <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-10.jpg" /></a>
-            <div class="message">
-              Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            </div>
+          <div class="widget-list-action text-nowrap text-grey">
+            &#8358;34,143,840.17
           </div>
-          <div class="left">
-            <span class="date-time">11:15am</span>
-            <a href="javascript:;" class="name">Shag Strap</a>
-            <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-14.jpg" /></a>
-            <div class="message">
-              Nullam iaculis pharetra pharetra. Proin sodales tristique sapien mattis placerat.
-            </div>
+        </a>
+        <!-- end widget-list-item -->
+        <!-- begin widget-list-item -->
+        <a href="#" class="widget-list-item">
+          <div class="widget-list-media icon">
+            <i class="fab fa-instagram-f bg-blue text-white"></i>
+          </div>
+          <div class="widget-list-content">
+            <div class="widget-list-title">Velity</div>
+          </div>
+          <div class="widget-list-action text-nowrap text-grey">
+            &#8358;27,867,502.67
+          </div>
+        </a>
+        <!-- end widget-list-item -->
+        <!-- begin widget-list-item -->
+        <a href="#" class="widget-list-item">
+          <div class="widget-list-media icon">
+            <i class="fab fa-instagram bg-aqua text-white"></i>
+          </div>
+          <div class="widget-list-content">
+            <div class="widget-list-title">J&J and Partners</div>
+          </div>
+          <div class="widget-list-action text-nowrap text-grey">
+            &#8358;24,550,799.20
+          </div>
+        </a>
+        <!-- end widget-list-item -->
+        <!-- begin widget-list-item -->
+        <a href="#" class="widget-list-item">
+          <div class="widget-list-media icon">
+            <i class="fab fa-instagram bg-red text-white"></i>
+          </div>
+          <div class="widget-list-content">
+            <div class="widget-list-title">Suretech</div>
+          </div>
+          <div class="widget-list-action text-nowrap text-grey">
+            &#8358;23,906,405.85
+          </div>
+        </a>
+        <!-- end widget-list-item -->
+        <!-- begin widget-list-item -->
+        <a href="#" class="widget-list-item p-b-3">
+          <div class="widget-list-media icon">
+            <i class="fab fa-instagram bg-pink text-white"></i>
+          </div>
+          <div class="widget-list-content">
+            <div class="widget-list-title">Geekko</div>
+          </div>
+          <div class="widget-list-action text-nowrap text-grey">
+            &#8358;16,993,460.00
+          </div>
+        </a>
+        <!-- end widget-list-item -->
+      </div>
+      <!-- end widget-list -->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-4 -->
+  <!-- end col-4 -->
+  <!-- begin col-4 -->
+  <div class="col-xl-4 col-lg-6">
+    <!-- begin card -->
+    <div class="card border-0 bg-dark text-white mb-3">
+      <!-- begin card-body -->
+      <div class="card-body">
+        <!-- begin title -->
+        <div class="mb-3 text-grey">
+          <b>TOP PRODUCTS BY UNITS SOLD</b>
+          <span class="ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Top products with units sold" placement="top" ngbPopover="Products with the most individual units sold. Includes orders from all sales channels."></i></span>
+        </div>
+        <!-- end title -->
+        <!-- begin product -->
+        <div class="d-flex align-items-center m-b-15">
+          <div class="widget-img rounded-lg width-30 m-r-10 bg-white p-3">
+            <div class="h-100 w-100" style="background: url(../assets/img/product/ship.jpg) center no-repeat; background-size: auto 100%;"></div>
+          </div>
+          <div class="text-truncate">
+            <div>Marine Cargo (2021)</div>
+            <div class="text-grey">&#8358;5,245,799.00</div>
+          </div>
+          <div class="ml-auto text-center">
+            <div class="f-s-13">95</div>
+            <div class="text-grey f-s-10">sold</div>
           </div>
         </div>
-      </perfect-scrollbar>
-
-			<ng-container footer>
-				<form name="send_message_form" data-id="message-form">
-					<div class="input-group">
-						<input type="text" class="form-control" name="message" placeholder="Enter your message here.">
-						<span class="input-group-append">
-							<button class="btn btn-primary" type="button"><i class="fa fa-camera"></i></button>
-							<button class="btn btn-primary" type="button"><i class="fa fa-link"></i></button>
-						</span>
-					</div>
-				</form>
-			</ng-container>
-		</panel>
-		<!-- end panel -->
-	</div>
-	<!-- end col-4 -->
-	<!-- begin col-4 -->
-	<div class="col-lg-4">
-		<!-- begin panel -->
-		<panel title="Today's Schedule" noButton="true" noBody="true">
-		  <ng-container outsideBody>
-        <div class="angular-calendar-inline">
-          <mwl-calendar-month-view [viewDate]="viewDate" [events]="events">
-          </mwl-calendar-month-view>
+        <!-- end product -->
+        <!-- begin product -->
+        <div class="d-flex align-items-center m-b-15">
+          <div class="widget-img rounded-lg width-30 m-r-10 bg-white p-3">
+            <div class="h-100 w-100" style="background: url(../assets/img/product/car.jpeg) center no-repeat; background-size: auto 100%;"></div>
+          </div>
+          <div class="text-truncate">
+            <div>Comprehensive Motor (2021)</div>
+            <div class="text-grey">&#8358;41,199,812.00</div>
+          </div>
+          <div class="ml-auto text-center">
+            <div class="f-s-13">185</div>
+            <div class="text-grey f-s-10">sold</div>
+          </div>
         </div>
-        <div class="list-group">
-          <a href="javascript:;" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-ellipsis rounded-0  border-left-0 border-right-0 border-top-0">
-            Sales Reporting
-            <span class="badge bg-teal f-s-10">9:00 am</span>
-          </a>
-          <a href="javascript:;" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-ellipsis rounded-0 rounded-bottom border-bottom-0 border-left-0 border-right-0">
-            Have a meeting with sales team
-            <span class="badge bg-blue f-s-10">2:45 pm</span>
-          </a>
+        <!-- end product -->
+        <!-- begin product -->
+        <div class="d-flex align-items-center m-b-15">
+          <div class="widget-img rounded-lg width-30 m-r-10 bg-white p-3">
+            <div class="h-100 w-100" style="background: url(../assets/img/product/car.jpeg) center no-repeat; background-size: auto 100%;"></div>
+          </div>
+          <div class="text-truncate">
+            <div>3rd Party Motor (2021)</div>
+            <div class="text-grey">&#8358;13,399,665.32</div>
+          </div>
+          <div class="ml-auto text-center">
+            <div class="f-s-13">129</div>
+            <div class="text-grey f-s-10">sold</div>
+          </div>
         </div>
-      </ng-container>
-		</panel>
-		<!-- end panel -->
-	</div>
-	<!-- end col-4 -->
-	<!-- begin col-4 -->
-	<div class="col-lg-4">
-		<!-- begin panel -->
-		<panel footerClass="text-center" noButton="true" noBody="true">
-			<ng-container header>
-				<h4 class="panel-title">New Registered Users</h4>
-				<span class="label bg-teal">24 new users</span>
-			</ng-container>
-			<ng-container outsideBody>
-        <ul class="registered-users-list clearfix">
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-5.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Savory Posh
-              <small>Algerian</small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-3.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Ancient Caviar
-              <small>Korean</small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-1.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Marble Lungs
-              <small>Indian</small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-8.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Blank Bloke
-              <small>Japanese</small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-2.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Hip Sculling
-              <small>Cuban</small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-6.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Flat Moon
-              <small>Nepalese</small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-4.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Packed Puffs
-              <small>Malaysian></small>
-            </h4>
-          </li>
-          <li>
-            <a href="javascript:;"><img src="/assets/img/user/user-9.jpg" alt="" /></a>
-            <h4 class="username text-ellipsis">
-              Clay Hike
-              <small>Swedish</small>
-            </h4>
-          </li>
-        </ul>
-			</ng-container>
-			<ng-container footer>
-				<a href="javascript:;" class="text-inverse">View All</a>
-			</ng-container>
-		</panel>
-		<!-- end panel -->
-	</div>
-	<!-- end col-4 -->
+        <!-- end product -->
+        <!-- begin product -->
+        <div class="d-flex align-items-center m-b-15">
+          <div class="widget-img rounded-lg width-30 m-r-10 bg-white p-3">
+            <div class="h-100 w-100" style="background: url(../assets/img/product/fire.jpeg) center no-repeat; background-size: auto 100%;"></div>
+          </div>
+          <div class="text-truncate">
+            <div>Fire and Burglary (2021)</div>
+            <div class="text-grey">&#8358;39,199,227.00</div>
+          </div>
+          <div class="ml-auto text-center">
+            <div class="f-s-13">56</div>
+            <div class="text-grey f-s-10">sold</div>
+          </div>
+        </div>
+        <!-- end product -->
+        <!-- begin product -->
+        <div class="d-flex align-items-center">
+          <div class="widget-img rounded-lg width-30 m-r-10 bg-white p-3">
+            <div class="h-100 w-100" style="background: url(../assets/img/product/old.jpeg) center no-repeat; background-size: auto 100%;"></div>
+          </div>
+          <div class="text-truncate">
+            <div>Group Life (2021)</div>
+            <div class="text-grey">&#8358;11,112,499.00</div>
+          </div>
+          <div class="ml-auto text-center">
+            <div class="f-s-13">25</div>
+            <div class="text-grey f-s-10">sold</div>
+          </div>
+        </div>
+        <!-- end product -->
+      </div>
+      <!-- end card-body -->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-4 -->
+  <!-- begin col-4 -->
+  <div class="col-xl-4 col-lg-6">
+    <!-- begin card -->
+    <div class="card border-0 bg-dark text-white mb-3">
+      <!-- begin card-body -->
+      <div class="card-body">
+        <!-- begin title -->
+        <div class="mb-3 text-grey">
+          <b>MARKETING CAMPAIGN</b>
+          <span class="ml-2"><i class="fa fa-info-circle" triggers="mouseenter:mouseleave" popoverTitle="Marketing Campaign" placement="top" ngbPopover="Campaign that run for getting more returning customers."></i></span>
+        </div>
+        <!-- end title -->
+        <!-- begin row -->
+        <div class="row align-items-center p-b-1">
+          <!-- begin col-4 -->
+          <div class="col-4">
+            <div class="height-100 d-flex align-items-center justify-content-center">
+              <img src="../assets/img/svg/img-2.svg" class="mw-100 mh-100" />
+            </div>
+          </div>
+          <!-- end col-4 -->
+          <!-- begin col-8 -->
+          <div class="col-8">
+            <div class="m-b-2 text-truncate">Email Marketing Campaign</div>
+            <div class="text-grey m-b-2 f-s-11">Mon 12/6 - Sun 18/6</div>
+            <div class="d-flex align-items-center m-b-2">
+              <div class="flex-grow-1">
+                <div class="progress progress-xs rounded-corner bg-white-transparent-1">
+                  <div class="progress-bar progress-bar-striped bg-indigo" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="ml-2 f-s-11 width-30 text-center">80%</div>
+            </div>
+            <div class="text-grey f-s-11 m-b-15 text-truncate">
+              57.5% people click the email
+            </div>
+            <a href="#" class="btn btn-xs btn-indigo f-s-10 pl-2 pr-2">View campaign</a>
+          </div>
+          <!-- end col-8 -->
+        </div>
+        <!-- end row -->
+        <hr class="bg-white-transparent-2 m-t-20 m-b-20" />
+        <!-- begin row -->
+        <div class="row align-items-center">
+          <!-- begin col-4 -->
+          <div class="col-4">
+            <div class="height-100 d-flex align-items-center justify-content-center">
+              <img src="../assets/img/svg/img-3.svg" class="mw-100 mh-100" />
+            </div>
+          </div>
+          <!-- end col-4 -->
+          <!-- begin col-8 -->
+          <div class="col-8">
+            <div class="m-b-2 text-truncate">Facebook Marketing Campaign</div>
+            <div class="text-grey m-b-2 f-s-11">Sat 10/6 - Sun 18/6</div>
+            <div class="d-flex align-items-center m-b-2">
+              <div class="flex-grow-1">
+                <div class="progress progress-xs rounded-corner bg-white-transparent-1">
+                  <div class="progress-bar progress-bar-striped bg-warning" style="width: 60%"></div>
+                </div>
+              </div>
+              <div class="ml-2 f-s-11 width-30 text-center">60%</div>
+            </div>
+            <div class="text-grey f-s-11 m-b-15 text-truncate">
+              +124k visitors from facebook
+            </div>
+            <a href="#" class="btn btn-xs btn-warning f-s-10 pl-2 pr-2">View campaign</a>
+          </div>
+          <!-- end col-8 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end card-body -->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-4 -->
 </div>
 <!-- end row -->
