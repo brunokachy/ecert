@@ -148,6 +148,7 @@ import {BrokerManagementComponent} from './pages/broker-management/broker-manage
 import {AdminDashboardComponent} from './pages/dashboard/admin-dashboard/admin-dashboard.component';
 import {BrokerDashboardComponent} from './pages/dashboard/broker-dashboard/broker-dashboard.component';
 import { ClaimsComponent }      from './pages/claims/claims.component';
+import { SupportComponent }      from './pages/support/support.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -237,7 +238,8 @@ FullCalendarModule.registerPlugins([
     AdminDashboardComponent,
     BrokerDashboardComponent,
 
-    ClaimsComponent
+    ClaimsComponent,
+    SupportComponent
   ],
   imports: [
     AppRoutingModule,

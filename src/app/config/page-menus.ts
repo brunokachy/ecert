@@ -31,6 +31,18 @@ var pageMenus = [{
   'title': 'Support',
   'url': 'support'
 },{
+  'icon': 'fa fa-phonw',
+  'title': 'Support',
+  'url': '',
+  'caret': 'true',
+  'submenu': [{
+    'url': 'suppport',
+    'title': 'Task'
+  },{
+    'url': 'extra/timeline',
+    'title': 'Chat'
+  }]
+},{
   'icon': 'fa fa-cogs',
   'title': 'Settngs',
   'url': 'settings'

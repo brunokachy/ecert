@@ -102,6 +102,7 @@ import {BrokerManagementComponent}  from './pages/broker-management/broker-manag
 import { AdminDashboardComponent }  from './pages/dashboard/admin-dashboard/admin-dashboard.component';
 import { BrokerDashboardComponent } from './pages/dashboard/broker-dashboard/broker-dashboard.component';
 import { ClaimsComponent }          from './pages/claims/claims.component';
+import { SupportComponent } from './pages/support/support.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -189,7 +190,8 @@ const routes: Routes = [
   { path: 'broker-management', component: BrokerManagementComponent, data: { title: 'Broker Management'} },
   { path: 'admin-dashboard', component: AdminDashboardComponent, data: { title: 'Admin Dashboard'} },
   { path: 'broker-dashboard', component: BrokerDashboardComponent, data: { title: 'Broker Dashboard'} },
-  { path: 'claims', component: ClaimsComponent, data: { title: 'Claims'} }
+  { path: 'claims', component: ClaimsComponent, data: { title: 'Claims'} },
+  { path: 'support', component: SupportComponent, data: { title: 'Support'} }
 ];
 
 @NgModule({
