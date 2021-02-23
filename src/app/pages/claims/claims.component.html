@@ -42,34 +42,62 @@
 
 <ng-template #modalDialog let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Add Broker</h4>
+    <h4 class="modal-title">Requst Claim</h4>
     <button type="button" class="close" (click)="d('Cross click')">×</button>
   </div>
   <div class="modal-body">
     <form action="/" method="POST">
+        <div class="form-group">
+          <select id="product" class="form-control">
+            <option> --- Select Product --- </option>
+            <option value="1">Marine Cargo</option>
+            <option value="2">Comprehensive Motor</option>
+            <option value="3">3rd Party Motor</option>
+            <option value="4">Fire and Burglary</option>
+            <option value="5">Group Life</option>
+          </select>
+        </div>
         <div class="form-group">
           <label for="name1">Name of Insured</label>
           <input type="text" class="form-control" id="name1" placeholder="Name of Insured" />
         </div>
         <div class="form-group">
           <label for="name1">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Contact Email" />
+          <input type="email" class="form-control" id="email" placeholder="Email" />
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" class="form-control" id="phone" placeholder="Contact Phone" />
+          <input type="tel" class="form-control" id="phone" placeholder="Phone" />
         </div>
         <div class="form-group">
-          <label for="name2">Date of Loss</label>
-          <input type="text" class="form-control" id="name2" placeholder="Last Name" />
+          <label for="date">Date of Incident</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                   name="d2" #c2="ngModel" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+                <i class="fa fa-calendar"></i>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="rc">RC Number</label>
-          <input type="text" class="form-control" id="rc" placeholder="RC Number" />
+          <label for="rc">Claim Number</label>
+          <input type="text" class="form-control" id="rc" placeholder="Claim Number" />
         </div>
+        <hr/>
         <div class="form-group">
           <label for="address">Address of Property Insured</label>
           <textarea id="address" class="form-control" rows="2"></textarea>
+        </div>
+        <hr/>
+        <div class="form-group">
+          <label for="car_no"> Vehicle Registration Number</label>
+          <input type="text" class="form-control" id="car_no" placeholder="Vehicle Registration Number" />
+        </div>
+        <div class="form-group">
+          <label for="driver"> Driven By</label>
+          <input type="text" class="form-control" id="driver" placeholder="Driven By..." />
         </div>
     </form>
   </div>

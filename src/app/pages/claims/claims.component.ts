@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { TableData } from './data';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-claims',
@@ -15,6 +16,7 @@ export class ClaimsComponent implements OnInit {
   }
 
   rows = [];
+  model2: Date;
   closeResult: string;
 
   temp = [];
