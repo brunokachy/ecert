@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TableData } from './data';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-claims',
@@ -14,15 +15,21 @@ export class ClaimsComponent implements OnInit {
   }
 
   rows = [];
+  closeResult: string;
 
   temp = [];
-
-  columns = [{ prop: 'name' }, { name: 'Company' }, { name: 'Gender' }];
+  columns = [
+    { name: 'Name', prop:'name' },
+    { name: 'Broker', prop:'broker' },
+    { prop: 'product', name:'Product' },
+    { prop: 'claim_no', name:'Claim Number' },
+    { prop: 'status', name:'Status' },
+    { name:'Action' }];
   @ViewChild(DatatableComponent) table: DatatableComponent;
 
   ColumnMode = ColumnMode;
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
     this.fetch(data => {
       // cache our list
       this.temp = [...data];
@@ -34,7 +41,7 @@ export class ClaimsComponent implements OnInit {
 
   fetch(cb) {
     const req = new XMLHttpRequest();
-    req.open('GET', `assets/data/company.json`);
+    req.open('GET', `assets/data/claims.json`);
 
     req.onload = () => {
       cb(JSON.parse(req.response));
@@ -55,5 +62,23 @@ export class ClaimsComponent implements OnInit {
     this.rows = temp;
     // Whenever the filter changes, always go back to the first page
     this.table.offset = 0;
+  }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 }

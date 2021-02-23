@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     moduleId: module.id,
@@ -8,6 +9,7 @@ import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 })
 export class BrokerManagementComponent {
     rows = [];
+    closeResult: string;
 
     temp = [];
 
@@ -20,7 +22,7 @@ export class BrokerManagementComponent {
 
     ColumnMode = ColumnMode;
 
-    constructor() {
+    constructor(private modalService: NgbModal) {
         this.fetch(data => {
             // cache our list
             this.temp = [...data];
@@ -58,8 +60,26 @@ export class BrokerManagementComponent {
     blockAgents(row) {
         console.log(row);
       }
-      
+
       approveAgent(value) {
         console.log(value);
+      }
+
+      open(content) {
+        this.modalService.open(content).result.then((result) => {
+          this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+      }
+
+      private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+          return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+          return 'by clicking on a backdrop';
+        } else {
+          return  `with: ${reason}`;
+        }
       }
 }

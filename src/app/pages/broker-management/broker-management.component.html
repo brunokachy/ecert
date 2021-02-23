@@ -1,8 +1,5 @@
 <!-- begin breadcrumb -->
-<ol class="breadcrumb float-xl-right">
-  <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-  <li class="breadcrumb-item active">Broker Management</li>
-</ol>
+  <button class="btn btn-green pull-right" (click)="open(modalDialog)"> <i class="fa fa-plus"></i> Add Broker</button>
 <!-- end breadcrumb -->
 <!-- begin page-header -->
 <h1 class="page-header">Broker <small>Management</small></h1>
@@ -26,8 +23,10 @@
           <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
             <div *ngIf="column.name === 'Action'">
               <div nowrap="" class="with-btn">
-                <a href="#" class="btn btn-sm btn-white">View Documents</a>
-                <a href="#" class="btn btn-sm btn-primary">Approve</a>
+                <button type="button" class="btn btn-sm btn-primary mr-2" (click)="open(editDialog)"> <i class="far fa-edit"></i> Edit</button>
+                <a href="javascript:;" [swal]="['Are you sure?', 'You are about to delete a broker', 'warning']" class="btn btn-sm btn-red">
+                  <i class="far fa-trash-alt"></i> Delete
+                </a>
               </div>
             </div>
             <div *ngIf="column.name !== 'Action'">
@@ -39,3 +38,89 @@
     </div>
   </ng-container>
 </panel>
+
+<ng-template #modalDialog let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Add Broker</h4>
+    <button type="button" class="close" (click)="d('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+    <form action="/" method="POST">
+        <div class="form-group">
+          <label for="iname1">Institution Name</label>
+          <input type="text" class="form-control" id="iname1" placeholder="Institution Name" />
+        </div>
+        <div class="form-group">
+          <label for="name1">First Name</label>
+          <input type="text" class="form-control" id="name1" placeholder="First Name" />
+        </div>
+        <div class="form-group">
+          <label for="name2">Last Name</label>
+          <input type="text" class="form-control" id="name2" placeholder="Last Name" />
+        </div>
+        <div class="form-group">
+          <label for="name1">Contact Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Contact Email" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Contact Phone</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Contact Phone" />
+        </div>
+        <div class="form-group">
+          <label for="rc">RC Number</label>
+          <input type="text" class="form-control" id="rc" placeholder="RC Number" />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" class="form-control" rows="2"></textarea>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-white" (click)="c('Close click')">Close</button>
+    <a href="javascript:;" class="btn btn-green"> <i class="fa fa-save"></i> Save</a>
+  </div>
+</ng-template>
+
+<ng-template #editDialog let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Broker</h4>
+    <button type="button" class="close" (click)="d('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+    <form action="/" method="POST">
+        <div class="form-group">
+          <label for="iname1">Institution Name</label>
+          <input type="text" class="form-control" id="iname1" placeholder="Institution Name" value="Grekko Ltd."/>
+        </div>
+        <div class="form-group">
+          <label for="name1">First Name</label>
+          <input type="text" class="form-control" id="name1" placeholder="First Name" value="Michael" />
+        </div>
+        <div class="form-group">
+          <label for="name2">Last Name</label>
+          <input type="text" class="form-control" id="name2" placeholder="Last Name" value="Douglas" />
+        </div>
+        <div class="form-group">
+          <label for="name1">Contact Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Contact Email" value="contact@grekko.com" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Contact Phone</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Contact Phone" value="+2348012345678" />
+        </div>
+        <div class="form-group">
+          <label for="rc">RC Number</label>
+          <input type="text" class="form-control" id="rc" placeholder="RC Number" value="1375797"/>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" class="form-control" rows="2">57 Cameron road, Ikoyi, Lagos</textarea>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-white" (click)="c('Close click')">Close</button>
+    <a href="javascript:;" class="btn btn-green"> <i class="fa fa-save"></i> Save</a>
+  </div>
+</ng-template>
