@@ -182,94 +182,65 @@
 <!-- end row -->
 <!-- begin row -->
 <div class="row">
-    <!-- begin col-4 -->
-    <div class="col-lg-4">
-        <!-- begin panel -->
-        <panel bodyClass="bg-light" noButton="true">
-            <ng-container header>
-                <h4 class="panel-title">Chat History</h4>
-                <span class="label bg-teal">4 message</span>
-            </ng-container>
+    <!-- begin col-8 -->
+    <div class="col-lg-8">
+      <!-- begin panel -->
+      <panel title="Message">
+        <perfect-scrollbar class="height-sm">
+          <ul class="media-list media-list-with-divider media-messaging">
+            <li class="media media-sm">
+              <a href="javascript:;" class="pull-left">
+                <img src="/assets/img/user/user-5.jpg" alt="" class="media-object rounded-corner" />
+              </a>
+              <div class="media-body">
+                <h5 class="media-heading">John Doe</h5>
+                <p>This is a dummy message just for demo purpose only. Morbi id nunc non eros fermentum vestibulum ut id felis. Nunc molestie libero eget urna aliquet, vitae laoreet felis ultricies. Fusce sit amet massa malesuada, tincidunt augue vitae, gravida felis.</p>
+              </div>
+            </li>
+            <li class="media media-sm">
+              <a href="javascript:;" class="pull-left">
+                <img src="/assets/img/user/user-6.jpg" alt="" class="media-object rounded-corner" />
+              </a>
+              <div class="media-body">
+                <h5 class="media-heading">Terry Ng</h5>
+                <p>This is a dummy message just for demo purpose only. Quisque ante sem, scelerisque iaculis interdum quis, eleifend id mi. Fusce congue leo nec mauris malesuada, id scelerisque sapien ultricies.</p>
+              </div>
+            </li>
+            <li class="media media-sm">
+              <a href="javascript:;" class="pull-left">
+                <img src="/assets/img/user/user-8.jpg" alt="" class="media-object rounded-corner" />
+              </a>
+              <div class="media-body">
+                <h5 class="media-heading">Michael Okoye</h5>
+                <p>This is a dummy message just for demo purpose only. Nulla rutrum eu leo vulputate ornare. Nulla a semper mi, ac lacinia sapien. Sed volutpat ornare eros, vel semper sem sagittis in. Quisque risus ipsum, iaculis quis cursus eu, tristique sed nulla.</p>
+              </div>
+            </li>
+            <li class="media media-sm">
+              <a href="javascript:;" class="pull-left">
+                <img src="/assets/img/user/user-7.jpg" alt="" class="media-object rounded-corner" />
+              </a>
+              <div class="media-body">
+                <h5 class="media-heading">Ken Miles</h5>
+                <p>This is a dummy message just for demo purpose only. Morbi condimentum nisl iaculis, laoreet risus sed, porta neque. Proin mi leo, dapibus at ligula a, aliquam consectetur metus.</p>
+              </div>
+            </li>
+          </ul>
+        </perfect-scrollbar>
 
-            <perfect-scrollbar style="height: 225px">
-                <div class="chats">
-                    <div class="left">
-                        <span class="date-time">yesterday 11:23pm</span>
-                        <a href="javascript:;" class="name">Sowse Bawdy</a>
-                        <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-12.jpg" /></a>
-                        <div class="message">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit volutpat. Praesent mattis interdum
-                            arcu eu feugiat.
-                        </div>
-                    </div>
-                    <div class="right">
-                        <span class="date-time">08:12am</span>
-                        <a href="javascript:;" class="name"><span class="label label-primary">ADMIN</span> Me</a>
-                        <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-13.jpg" /></a>
-                        <div class="message">
-                            Nullam posuere, nisl a varius rhoncus, risus tellus hendrerit neque.
-                        </div>
-                    </div>
-                    <div class="left">
-                        <span class="date-time">09:20am</span>
-                        <a href="javascript:;" class="name">Neck Jolly</a>
-                        <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-10.jpg" /></a>
-                        <div class="message">
-                            Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                        </div>
-                    </div>
-                    <div class="left">
-                        <span class="date-time">11:15am</span>
-                        <a href="javascript:;" class="name">Shag Strap</a>
-                        <a href="javascript:;" class="image"><img alt="" src="/assets/img/user/user-14.jpg" /></a>
-                        <div class="message">
-                            Nullam iaculis pharetra pharetra. Proin sodales tristique sapien mattis placerat.
-                        </div>
-                    </div>
-                </div>
-            </perfect-scrollbar>
-
-            <ng-container footer>
-                <form name="send_message_form" data-id="message-form">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="message" placeholder="Enter your message here.">
-                        <span class="input-group-append">
-                            <button class="btn btn-primary" type="button"><i class="fa fa-camera"></i></button>
-                            <button class="btn btn-primary" type="button"><i class="fa fa-link"></i></button>
-                        </span>
-                    </div>
-                </form>
-            </ng-container>
-        </panel>
-        <!-- end panel -->
+        <ng-container footer>
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control bg-light" placeholder="Enter message" />
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="fa fa-pencil-alt"></i></button>
+              </span>
+            </div>
+          </form>
+        </ng-container>
+      </panel>
+      <!-- end panel -->
     </div>
-    <!-- end col-4 -->
-    <!-- begin col-4 -->
-    <div class="col-lg-4">
-        <!-- begin panel -->
-        <panel title="Today's Schedule" noButton="true" noBody="true">
-            <ng-container outsideBody>
-                <div class="angular-calendar-inline">
-                    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events">
-                    </mwl-calendar-month-view>
-                </div>
-                <div class="list-group">
-                    <a href="javascript:;"
-                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-ellipsis rounded-0  border-left-0 border-right-0 border-top-0">
-                        Sales Reporting
-                        <span class="badge bg-teal f-s-10">9:00 am</span>
-                    </a>
-                    <a href="javascript:;"
-                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-ellipsis rounded-0 rounded-bottom border-bottom-0 border-left-0 border-right-0">
-                        Have a meeting with sales team
-                        <span class="badge bg-blue f-s-10">2:45 pm</span>
-                    </a>
-                </div>
-            </ng-container>
-        </panel>
-        <!-- end panel -->
-    </div>
-    <!-- end col-4 -->
+    <!-- end col-8 -->
 
 </div>
 <!-- end row -->
