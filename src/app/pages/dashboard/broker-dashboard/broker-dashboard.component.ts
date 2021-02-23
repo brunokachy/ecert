@@ -79,8 +79,8 @@ export class BrokerDashboardComponent implements OnInit{
         }];
 
         this.donutChartData = [
-            { 'label': 'Return Visitors', 'value': 784466, 'color': global.COLOR_BLUE },
-            { 'label': 'New Visitors', 'value': 416747, 'color': global.COLOR_GREEN }
+            { 'label': 'Return Visitors', 'value': 74, 'color': global.COLOR_BLUE },
+            { 'label': 'New Visitors', 'value': 42, 'color': global.COLOR_GREEN }
         ];
 
         this.donutChartOptions = {
